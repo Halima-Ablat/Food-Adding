@@ -13,13 +13,17 @@ function Food() {
     setFoods(foods.filter((_, i) => i !== index));
   }
 
+  function capitalizeFirstLetter(string){
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
   return (
     <div>
       <h1>List of Food</h1>
       <ul>
         {foods.map((food, index) => (
           <li key={index} onClick={() => handleRemoveFood(index)}>
-            {food}
+            {capitalizeFirstLetter(food)}
           </li>
         ))}
       </ul>
